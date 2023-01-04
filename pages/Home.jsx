@@ -1,4 +1,4 @@
-2import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from '../styles/homes.module.css'
 import Menu from '../components/Menu.jsx'
 import MenuUpHome from '../components/MenuUpHome.jsx'
