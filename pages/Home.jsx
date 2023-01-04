@@ -9,27 +9,39 @@ function Home() {
 	const userList = [
 		{
 			photo: "photouser/cr7.jpg",
-			user: "Cristiano Ronaldo",
+			user: "CR7",
+			name: "Cristiano",
+			surname: "Ronaldo",
+
 		},
 		{
 			photo: "photouser/messi.jpg",
-			user: "Lionel Messi",
+			user: "M10",
+			name: "Lionel",
+			surname: "Messi",
 		},
 		{
 			photo: "photouser/mbappe.jpg",
-			user: "Kilian Mbappe",
+			user: "Mbappe710",
+			name: "Kilian",
+			surname: "Mbappe",
 		},
 		{
 			photo: "photouser/neymar.jpg",
-			user: "Neymar JR",
+			user: "N10JR",
+			name: "Neymar",
+			surname: "JR",
 		},
 		{
 			photo: "",
-			user: "Leonardo Sombra",
+			user: "lefasom",
+			name: "Leonardo",
+			surname: "Sombra",
 		},
 
 
 	]
+
 	return (
 	  <>	
 	  	<Menu />
