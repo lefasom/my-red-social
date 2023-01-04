@@ -11,6 +11,5 @@ export default function Index() {
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Icons" />
   </Head>
   <Home />
-  hola mundo
   </>)
 }
