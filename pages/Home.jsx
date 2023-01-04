@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+2import React, { useEffect, useState } from 'react'
 import styles from '../styles/homes.module.css'
 import Menu from '../components/Menu.jsx'
 import MenuUpHome from '../components/MenuUpHome.jsx'
@@ -7,26 +7,37 @@ import MenuUpHome from '../components/MenuUpHome.jsx'
 function Home() {
 	const PERFIL_VACIO = "photouser/perfil-vacio.jpg"
 	const userList = [
-		{
-			photo: "photouser/cr7.jpg",
-			user: "Cristiano Ronaldo",
-		},
-		{
-			photo: "photouser/messi.jpg",
-			user: "Lionel Messi",
-		},
+		 {
+		 	photo: "photouser/cr7.jpg",
+		 	user: "CR7",
+		 	name: "Cristiano",
+			surname: "Ronaldo",
+
+		 },
+		 {
+                	photo: "photouser/messi.jpg",
+		 	user: "M10",
+		 	name: "Lionel",
+		 	surname: "Messi",
+	        },
 		{
 			photo: "photouser/mbappe.jpg",
-			user: "Kilian Mbappe",
+			user: "Mbappe710",
+			name: "Kilian",
+			surname: "Mbappe",
 		},
-		{
+	        {
 			photo: "photouser/neymar.jpg",
-			user: "Neymar JR",
+			user: "N10JR",
+		        name: "Neymar",
+			surname: "JR",
 		},
 		{
 			photo: "",
-			user: "Leonardo Sombra",
-		},
+	         	user: "lefasom",
+			name: "Leonardo",
+			surname: "Sombra",
+		 },
 
 
 	]
