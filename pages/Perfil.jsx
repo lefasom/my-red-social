@@ -1,4 +1,5 @@
 import Licencia from '../components/Licencia.jsx'
+import Galery from '../components/Galery.jsx'
 import Menu from '../components/Menu.jsx'
 import MenuUpPerfil from '../components/MenuUpPerfil.jsx'
 import Head from 'next/head'
@@ -18,6 +19,7 @@ function Perfil() {
 			<Menu />
 			<MenuUpPerfil />
 			<Licencia />
+			<Galery />
 			<br/>
 			<br/>
 			<br/>
