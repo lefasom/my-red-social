@@ -146,7 +146,7 @@ function Galery() {
 	// useEffect(() => { getHistoriasName() })
 	///////////////////////////////////////////////////////////////////// </ HISTORIAS DE USUARIO >
 	/////////////////////////////////////////////< MODAL COMENTARIOS > ///////////////////
-	const [ modalClass, setModalClass ] = useState('modalSalir')
+	const [ modalClass, setModalClass ] = useState(false)
 	// const [ comment, setComment ] = useState([])
 	// const modalComentario = (idPhoto) => {
 	// 		Axios.get(`http://localhost:3001/Comment/${idPhoto}`).then((response) => {
@@ -267,26 +267,274 @@ function Galery() {
 	{/*////////////////////////////////////////////////////// </ BOTONERA >*/}
 
 	{/* ////////////////////////////////////////////////// < HISTORIAS Y COMENTARIOS >*/}
-		        {/* <div className={modalClass}>
-		        	<button onClick={()=>{setModalClass('modalSalir')}}>
+		      <style>
+				{`
+				.commentfalse{
+					background-color: #ddd;
+					height: 0px;
+					overflow-y: hidden;
+					overflow-y: scroll;
+				}
+				.commenttrue{
+					position:fixed;
+					top:0;
+					height:100vh;
+					width: 100vw;
+					background-color: #eff;
+					overflow-y: hidden;
+					overflow-y: scroll;
+				}
+				button{
+					background: transparent;
+					border: 0;
+					cursor: pointer;
+					font-family: poppins;
+					font-size: 15px;
+					padding-left:10px;
+					padding-top: 10px;
+				}
+				.commentBTN span{
+					position: absolute;
+					font-weight: 500;
+				}
+				.flexComment{
+					display: flex;
+				
+					border-radius: 10px;
+					
+					margin: 10px 5px;
+					padding: 5px;
+				}
+				.flexComment .colum{
+					margin: 0 30px;
+					width: 300px;
+				}
+				
+				.flexComment button{
+					background-color: transparent;
+					border: 0;
+					
+					cursor: pointer;
+				
+				}
+				
+				.hora{
+					display: flex;
+				}
+				.hora button span{
+					color: #bbb;
+				}
+				.hora button span:hover{
+					color: orangered;
+				}
+				.colum #time{
+				
+					color: #999;
+					font-size: 12px;
+					margin-top: 5px;
+				}
+				
+.flexComment .h4{
+    color: #777;
+    font-size: 13px;
+
+}
+.flexComment  .miH4{
+    color: #3f72ff;
+    font-size: 15px;
+
+}
+
+.albumOne input{
+    padding: 10px 5px;
+    padding-right: 20%;
+    margin: 0px;
+    margin-left: 14px;
+    border: 0;
+    outline: none;
+    border-radius: 29px;
+    border: 1px solid #ddd;
+    font-size: 17px;
+    font-family: poppins;
+    color: #444;
+    width: 77%;
+
+}
+.albumOne input::placeholder{
+    font-size: 17px;
+    font-family: poppins;
+    color: #888;
+
+
+}
+.albumOne button {
+    border: 0;
+    background-color: #eee;
+    cursor: pointer;
+    border-radius: 29px;
+
+}
+
+.albumOne button .send{
+    font-size: 28px;
+    color: #777;
+    margin-left: 5px;
+}
+
+.modalComentario{
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+
+    
+
+}
+.modalComentario button {
+
+    width: 40px;
+    height: 30px;
+    font-size: 38px;
+    background-color: transparent;
+    border: 0;
+
+
+}
+.border{
+    border-bottom: 1px solid #ddd;
+}
+.border button{
+    margin-left: 10px;
+    margin-bottom: 13px;
+    color: #999;
+
+}
+.modalSalir{
+    display: none;
+}
+.comment{
+    border-radius: 10px;
+    background-color: rgba(274, 274, 274, 1);
+    height: 90%;
+    width: 90%;
+    overflow-y: hidden;
+    overflow-y: scroll;
+    margin: auto;
+
+}
+.comment button{
+    color: #555;
+
+}
+.flexComment .img{
+    width: 56px;
+    height: 56px;
+    border: 3px solid #ddd;
+    border-radius: 50%;
+    display: flex;
+    margin-bottom: 5px;
+    margin-left: 10px;
+}
+.flexComment img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    padding: .2px;
+}
+.comentarios button{
+    margin: 0 10px;
+    padding: 10px 10px;
+    font-size: 19px;
+    letter-spacing: 2px;
+    background-color: transparent;
+    color: #555;
+
+}
+
+.msj h3{
+    margin-left: 10px;
+    color: #555;
+    font-family: poppins;
+}
+
+#publicar{
+    background-color: #fff;
+    color: #3f72ff;
+    font-size: 15px;
+    cursor: pointer;
+    position: relative;
+    left: -66px;
+    font-family: poppins;
+
+}
+.count{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	border-bottom: 1px solid #ccc;
+	border-top: 1px solid #ccc;
+}
+
+.count div h4{
+	color: #444;
+	font-family: poppins;
+	font-size: 17px;
+	text-align: center;
+	margin-bottom: 0;
+}
+.count div p{
+	margin-top: 0;
+	text-align: center;
+	font-family: poppins;
+	font-size: 15px;
+	color: #999;
+	font-weight: 444;
+}
+
+.view{
+	display: flex;
+	justify-content: space-around;
+	padding: 13px 22px;
+}
+.view button{
+	border: 0;
+	background-color: transparent;
+	cursor: pointer;
+}
+.view button span{
+	font-size: 32px;
+	color: #888;
+}
+.view button:focus span{
+	color: #3f72ff;
+}
+
+				`}
+			  </style>
+			    <div className={ modalClass ? "commenttrue" : "commentfalse" }>
+		        	<button onClick={()=>{setModalClass(false)}}>
 		        		<span className="material-symbols-outlined">
 							arrow_back_ios
 						</span>
 		        	</button>
-					<div  className={styles.comment}>	
+					<div  className="comment">	
 						{comentarios.map((val,key)=>{
 								
 									return(
-										<div className={styles.flexComment} key={key}>
+										<div className="flexComment" key={key}>
 											<div className={styles.img}>
 												<img src={ val.photo } alt={val.user}/>
 											</div>
-											<div className={styles.colum}>
-												<h4 className={styles.miH4}>{val.user}</h4>
+											<div className="colum">
+												<h4 className="miH4">{val.user}</h4>
 												<p>{val.comentario}</p>
 												
 											</div>
-											<div className={styles.hora}>
+											<div className="hora">
 												<button>
 													<span className="material-symbols-sharp">delete</span>
 												</button>
@@ -296,7 +544,7 @@ function Galery() {
 						})} 
 					</div>
 
-		        </div> */}
+		        </div>
 		        <div className={clase}>
 				<style jsx>{`
 				.albumOne .img img{
@@ -419,10 +667,10 @@ function Galery() {
 
 									<div className="comentarios" >
 										<button 
-										// onClick={()=>{
-										// 	setModalClass('modalComentario')
-										// 	modalComentario(val.idPhoto)
-										// }}
+										onClick={()=>{
+											setModalClass('modalComentario')
+											// modalComentario(val.idPhoto)
+										}}
 										>
 											Ver los comentarios
 										</button>
