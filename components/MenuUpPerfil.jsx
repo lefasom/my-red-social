@@ -10,18 +10,18 @@ function MenuUpPerfil(props) {
 		// 	surname: "Ronaldo",
 
 		// },
-		// {
-		// 	photo: "photouser/messi.jpg",
-		// 	user: "M10",
-		// 	name: "Lionel",
-		// 	surname: "Messi",
-		// },
 		{
-			photo: "photouser/mbappe.jpg",
-			user: "Mbappe710",
-			name: "Kilian",
-			surname: "Mbappe",
+			photo: "photouser/messi.jpg",
+			user: "M10",
+			name: "Lionel",
+			surname: "Messi",
 		},
+		// {
+		// 	photo: "photouser/mbappe.jpg",
+		// 	user: "Mbappe710",
+		// 	name: "Kilian",
+		// 	surname: "Mbappe",
+		// },
 		// {
 		// 	photo: "photouser/neymar.jpg",
 		// 	user: "N10JR",
