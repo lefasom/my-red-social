@@ -636,7 +636,7 @@ function Galery() {
 				}
 				.albumGrid img{
 					width: 98.5%;
-					height: 45vh;
+					height: 30vh;
    					object-fit: cover;
 
 				}	
